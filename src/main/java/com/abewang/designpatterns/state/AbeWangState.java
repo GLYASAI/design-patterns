@@ -11,8 +11,4 @@ public interface AbeWangState {
     void study();
 
     void sleep();
-    /**
-     * 解除仙人模式
-     */
-    void relieve();
 }

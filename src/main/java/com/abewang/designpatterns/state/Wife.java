@@ -1,14 +1,12 @@
 package com.abewang.designpatterns.state;
 
 /**
- * Abe wang同学的老婆
+ * Abe Wang同学的老婆
  * @Author Abe wang
  * @Date 3/30/2018.
  */
 public class Wife {
     private AbeWangState abeWangState;
-
-    private Immortal immortal = new Immortal(this);
 
     private Study study = new Study(this);
 
@@ -17,22 +15,26 @@ public class Wife {
     private Sleep sleep = new Sleep(this);
 
     public Wife() {
-        abeWangState = immortal;
+        abeWangState = sleep;
     }
 
     public void setAbeWangState(AbeWangState abeWangState) {
         this.abeWangState = abeWangState;
     }
 
+    public void study() {
+        abeWangState.study();
+    }
+
+    public void eat() {
+        abeWangState.eat();
+    }
+
+    public void sleep() {
+        abeWangState.sleep();
+    }
+
     // region getter & setter
-    public Immortal getImmortal() {
-        return immortal;
-    }
-
-    public void setImmortal(Immortal immortal) {
-        this.immortal = immortal;
-    }
-
     public Study getStudy() {
         return study;
     }

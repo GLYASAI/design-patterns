@@ -20,17 +20,12 @@ public class Study implements AbeWangState {
     @Override
     public void study() {
         System.out.println("我正在学习。");
-        System.out.println("学习完毕，进入吃饭状态。");
+        System.out.println("学习完毕，吃饭去了。");
         wife.setAbeWangState(wife.getEat());
     }
 
     @Override
     public void sleep() {
-        System.out.println("我正在学习，不能睡觉");
-    }
-
-    @Override
-    public void relieve() {
         System.out.println("我正在学习，不能睡觉");
     }
 }
