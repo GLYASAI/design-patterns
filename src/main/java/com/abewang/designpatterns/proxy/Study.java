@@ -1,15 +1,12 @@
 package com.abewang.designpatterns.proxy;
 
-import com.abewang.designpatterns.proxy.AbeWangState;
-import com.abewang.designpatterns.proxy.Wife;
-
 /**
  *  努力学习
  * @Author Abe wang
  * @Date 3/30/2018.
  */
 public class Study implements AbeWangState {
-    private Wife wife;
+    private transient Wife wife;
 
     public Study(Wife wife) {
         this.wife = wife;
@@ -30,5 +27,10 @@ public class Study implements AbeWangState {
     @Override
     public void sleep() {
         System.out.println("我正在学习，不能睡觉");
+    }
+
+    @Override
+    public String toString() {
+        return "study...";
     }
 }

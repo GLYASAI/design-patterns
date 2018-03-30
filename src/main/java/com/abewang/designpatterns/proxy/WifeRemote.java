@@ -13,4 +13,8 @@ public interface WifeRemote extends Remote {
     void eat() throws RemoteException;
 
     void sleep() throws RemoteException;
+
+    String getNickname() throws RemoteException;
+
+    AbeWangState getAbeWangState() throws RemoteException;
 }

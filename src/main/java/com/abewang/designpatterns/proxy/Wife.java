@@ -9,20 +9,19 @@ import java.rmi.server.UnicastRemoteObject;
  * @Date 3/30/2018.
  */
 public class Wife extends UnicastRemoteObject implements WifeRemote {
+    private String nickname;
+
     private AbeWangState abeWangState;
 
-    private Study study = new Study(this);
+    private AbeWangState study = new Study(this);
 
-    private Eat eat = new Eat(this);
+    private AbeWangState eat = new Eat(this);
 
-    private Sleep sleep = new Sleep(this);
+    private AbeWangState sleep = new Sleep(this);
 
-    public Wife() throws RemoteException {
+    public Wife(String nickname) throws RemoteException {
         abeWangState = sleep;
-    }
-
-    public void setAbeWangState(AbeWangState abeWangState) {
-        this.abeWangState = abeWangState;
+        this.nickname = nickname;
     }
 
     @Override
@@ -41,28 +40,31 @@ public class Wife extends UnicastRemoteObject implements WifeRemote {
     }
 
     // region getter & setter
-    public Study getStudy() {
+    @Override
+    public String getNickname() throws RemoteException {
+        return nickname;
+    }
+
+    @Override
+    public AbeWangState getAbeWangState() {
+        return abeWangState;
+    }
+
+    public void setAbeWangState(AbeWangState abeWangState) {
+        this.abeWangState = abeWangState;
+    }
+
+    public AbeWangState getStudy() {
         return study;
     }
 
-    public void setStudy(Study study) {
-        this.study = study;
-    }
-
-    public Eat getEat() {
+    public AbeWangState getEat() {
         return eat;
     }
 
-    public void setEat(Eat eat) {
-        this.eat = eat;
-    }
-
-    public Sleep getSleep() {
+    public AbeWangState getSleep() {
         return sleep;
     }
 
-    public void setSleep(Sleep sleep) {
-        this.sleep = sleep;
-    }
     // endregion
 }

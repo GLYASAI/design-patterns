@@ -1,5 +1,6 @@
 package com.abewang.designpatterns.proxy;
 
+import java.io.Serializable;
 import java.rmi.RemoteException;
 
 /**
@@ -7,7 +8,7 @@ import java.rmi.RemoteException;
  * @Author Abe wang
  * @Date 3/30/2018.
  */
-public interface AbeWangState {
+public interface AbeWangState extends Serializable {
     void eat() throws RemoteException; // 所有的远程方法都必须声明RemoteException
                                         // 否则报错“remote object implements illegal remote interface”
     void study() throws RemoteException;

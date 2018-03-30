@@ -5,7 +5,7 @@ package com.abewang.designpatterns.proxy;
  * @Date 3/30/2018.
  */
 public class Sleep implements AbeWangState {
-    private Wife wife;
+    private transient Wife wife;
 
     public Sleep(Wife wife) {
         this.wife = wife;
@@ -26,5 +26,10 @@ public class Sleep implements AbeWangState {
         System.out.println("我正在睡觉。");
         System.out.println("睡醒了，起床学习。");
         wife.setAbeWangState(wife.getStudy());
+    }
+
+    @Override
+    public String toString() {
+        return "sleep...";
     }
 }
