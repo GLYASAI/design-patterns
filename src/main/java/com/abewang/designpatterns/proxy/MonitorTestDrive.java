@@ -11,6 +11,7 @@ import java.rmi.RemoteException;
  */
 public class MonitorTestDrive {
     public static void main(String[] args) throws RemoteException, NotBoundException, MalformedURLException {
+        // stub
         WifeRemote wifeRemote = (WifeRemote)Naming.lookup("rmi://127.0.0.1:10010/test");
         Monitor monitor = new Monitor(wifeRemote);
         monitor.report();

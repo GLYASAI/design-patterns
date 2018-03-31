@@ -13,6 +13,7 @@ public class WifeRemoteTestDrive {
     public static void main(String[] args) throws RemoteException, MalformedURLException {
         WifeRemote wifeRemote = new Wife("小黄");
         wifeRemote.sleep();
+        // 人工创建rmiregistry服务
         LocateRegistry.createRegistry(10010);
         Naming.rebind("//127.0.0.1:10010/test", wifeRemote);
         System.out.println("服务启动成功");
